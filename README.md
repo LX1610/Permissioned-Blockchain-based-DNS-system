@@ -63,7 +63,7 @@ This is a one-time process on your host machine.
     go build -o node_app ./cmd/node
     go build -o resolver_app ./cmd/resolver
     go build -o attacker_app ./cmd/attacker
-    go build -o client_app ./cmd/client
+    go build -o client_app ./cmd/client (client_app.exe for Windows)
     ```
 3.  **Transfer Files:** Use `scp` to copy the compiled apps and `validator_keys/` folder to each VM.
 
@@ -85,6 +85,7 @@ Use separate SSH sessions to launch each component in the correct order.
     ```bash
     ./resolver_app -id main-resolver -api 192.168.56.21:8080 -nodes [http://10.0.0.10:8081](http://10.0.0.10:8081),[http://10.0.0.11:8081](http://10.0.0.11:8081),[http://10.0.0.12:8081](http://10.0.0.12:8081) > resolver.log 2>&1 &
     ```
+    (Logging is optional)
 3.  **Start Attacker (VM5):**
     ```bash
     ./attacker_app > attacker.log 2>&1 &

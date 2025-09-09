@@ -85,11 +85,11 @@ Use separate SSH sessions to launch each component in the correct order.
     ```bash
     ./resolver_app -id main-resolver -api 192.168.56.21:8080 -nodes [http://10.0.0.10:8081](http://10.0.0.10:8081),[http://10.0.0.11:8081](http://10.0.0.11:8081),[http://10.0.0.12:8081](http://10.0.0.12:8081) > resolver.log 2>&1 &
     ```
-    (Logging is optional)
 3.  **Start Attacker (VM5):**
     ```bash
     ./attacker_app > attacker.log 2>&1 &
     ```
+    (Logging is optional for the above steps, just remove the "resolver.log 2>&1 &", if logging is not needed)
 4.  **Run Client (Host Machine):**
     ```bash
     ./client_app
